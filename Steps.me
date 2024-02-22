@@ -1,0 +1,73 @@
+Step 1
+    In root file
+        import {
+            ApolloClient,
+            InMemoryCache,
+            ApolloProvider,
+            HttpLink,
+            from
+        } from '@apollo/client'
+Step 2
+    Root file
+    import {onError} from '@apollo/client/link/error' //For Error showing
+
+Step 3 
+    Root file
+    Create a new constructor of appolo client and pass an object
+    and complete this predefined code for error handling
+    
+    const errorLink = onError(({ graphQLErrors,networkError})=>{
+        if(graphQLErrors){
+        graphQLErrors.map(({message,locations,path})=>{
+            alert(`GraphQL error ${message}`)
+        })
+        }
+        if(networkError){
+            console.log(networkError)
+        }
+        })
+
+Step 4
+     Wrap all our parent component with appolo provider
+     export default function Home() {
+        return (
+            <main>
+                <ApolloProvider client={client}>
+                    <HomeContainer />
+                </ApolloProvider>
+            </main>
+            );
+
+Step 5 
+    Create a file in root called GraphQL
+    Inside that create 2 file 
+        Mutation
+        Query
+
+Step 6
+    Inside Query.js file
+    import graphQl from AppoloClient
+export const LOAD_USERS = GraphQL`
+    query {
+        getAllUsers {
+            id
+            firstName
+            email
+            password
+        }
+    }
+`
+Put your query what you want data from backend (what field you needed)
+
+Step 7
+    Go to the page where we want the data import some stuffs and call that query that we created last Step
+import { 
+    useQuery,
+    GraphQL }
+from '@apollo/client'
+import { LOAD_USERS } from '../GraphQL/Queries'
+
+const getAllUsers = () => {
+    const {error, loading, data} = useQuery(LOAD_USERS)
+
+}
