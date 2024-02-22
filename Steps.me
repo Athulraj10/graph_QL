@@ -4,7 +4,7 @@ Ready to dive into Apollo Client?
 This quick tutorial will get you up and running smoothly.
 
 Step 1: Setup
-Begin by setting up a new React project locally with CodeSandbox.
+Begin by setting up a new React project locally with CodeSandbox or other.
 
 Step 2: Install Dependencies
 Install the required dependencies by running:
@@ -12,8 +12,8 @@ Install the required dependencies by running:
 bash
 Copy code
 npm install @apollo/client graphql
-Step 3: Initialize ApolloClient
 
+Step 3: Initialize ApolloClient
 In your main file (main.jsx), initialize ApolloClient with the necessary configuration:
 
 javascript
@@ -24,8 +24,9 @@ const client = new ApolloClient({
   uri: 'https://flyby-router-demo.herokuapp.com/',
   cache: new InMemoryCache(),
 });
-Step 4: Connect to React
 
+
+Step 4: Connect to React
 Connect Apollo Client to React using the ApolloProvider component:
 
 javascript
@@ -41,10 +42,10 @@ ReactDOM.render(
   </ApolloProvider>,
   document.getElementById('root')
 );
+
+
 Step 5: Fetch Data with useQuery
-
 Now, start fetching data using the useQuery hook:
-
 javascript
 Copy code
 import { useQuery, gql } from '@apollo/client';
@@ -84,10 +85,14 @@ Copy code
 export default function App() {
   return (
     <div>
-      <h2>My first Apollo app 🚀</h2>
+      <h2>My first Apollo app </h2>
       <br/>
       <DisplayLocations />
     </div>
   );
 }
-🎉 Congratulations! You've successfully created your first component that renders with GraphQL data from Apollo Client! Explore more components using useQuery and experiment with these newfound concepts.
+
+
+Congratulations! You've successfully created your first component that renders with GraphQL data from Apollo Client! 
+Explore more components using useQuery and experiment with these newfound concepts.
+Keep workout on this Client I'll back with server Configuration
